@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montador de Jogos de Corte a Laser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+        <h1>Construtor de Jogos com Formas Geométricas</h1>
+        <p>Crie componentes de jogos combinando formas e depois monte jogos incríveis!</p>
+    </header>
+    
+    <div class="main-container">
+        <!-- Abas para alternar entre a criação de componentes e a criação de jogos -->
+        <div class="app-tabs">
+            <button class="tab-button active" data-tab="component-creator">Criar Componentes</button>
+            <button class="tab-button" data-tab="game-creator">Criar Jogos</button>
+        </div>
+
+        <!-- Tela 1: Criação de Componentes -->
+        <div class="tab-content active" id="component-creator">
+            <div class="creator-container">
+                <section class="shapes-section">
+                    <h2>Formas Básicas</h2>
+                    <div class="shapes-grid" id="shapesGrid">
+                        <!-- Formas serão geradas via JavaScript -->
+                    </div>
+                </section>
+                
+                <section class="assembly-section">
+                    <h2>Área de Montagem</h2>
+                    <div class="shape-assembly-area" id="shapeAssemblyArea">
+                        <!-- Área onde as formas serão arrastadas -->
+                    </div>
+                    
+                    <div class="assembly-controls">
+                        <button class="button button-clear" id="clearShapeAssembly">Limpar</button>
+                        <button class="button button-save" id="saveComponent">Criar Componente</button>
+                    </div>
+                </section>
+                
+                <section class="component-preview">
+                    <h2>Componente em Criação</h2>
+                    <div id="componentPreview">
+                        <p>Arraste formas para a área de montagem para criar um componente</p>
+                    </div>
+                    
+                    <div id="componentForm" class="component-form hidden">
+                        <h3>Finalizar Componente</h3>
+                        <div class="form-group">
+                            <label for="componentName">Nome do Componente:</label>
+                            <input type="text" id="componentName" placeholder="Ex: Dado 6 Faces">
+                        </div>
+                        <div class="form-group">
+                            <label for="componentIcon">Ícone (emoji):</label>
+                            <input type="text" id="componentIcon" placeholder="Ex: 🎲">
+                        </div>
+                        <div class="form-group">
+                            <label for="componentCategory">Categoria:</label>
+                            <select id="componentCategory">
+                                <option value="Dado">Dado</option>
+                                <option value="Peça">Peça</option>
+                                <option value="Tabuleiro">Tabuleiro</option>
+                                <option value="Carta">Carta</option>
+                                <option value="Ficha">Ficha</option>
+                                <option value="Marcador">Marcador</option>
+                            </select>
+                        </div>
+                        <button class="button button-save" id="confirmComponent">Salvar Componente</button>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="components-library">
+                <h2>Biblioteca de Componentes</h2>
+                <div class="components-grid" id="componentsGrid">
+                    <p>Seus componentes criados aparecerão aqui</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tela 2: Criação de jogos com os componentes criados -->
+        <div class="tab-content" id="game-creator">
+            <div class="creator-container">
+                <section class="components-section">
+                    <h2>Componentes Disponíveis</h2>
+                    <div class="components-selection" id="componentsSelection">
+                        <!-- Componentes criados serão mostrados aqui -->
+                        <p>Crie componentes primeiro para montar jogos</p>
+                    </div>
+                </section>
+                
+                <section class="game-assembly-section">
+                    <h2>Área de Montagem do Jogo</h2>
+                    <div class="game-assembly-area" id="gameAssemblyArea">
+                        <!-- Área onde os componentes serão arrastados para formar jogos -->
+                    </div>
+                    
+                    <div class="assembly-controls">
+                        <button class="button button-clear" id="clearGameAssembly">Limpar</button>
+                        <button class="button button-save" id="saveGame">Criar Jogo</button>
+                    </div>
+                </section>
+                
+                <section class="game-preview">
+                    <h2>Jogo em Criação</h2>
+                    <div id="gamePreview">
+                        <p>Arraste componentes para a área de montagem para criar um jogo</p>
+                    </div>
+                    
+                    <div id="gameForm" class="game-form hidden">
+                        <h3>Finalizar Jogo</h3>
+                        <div class="form-group">
+                            <label for="gameName">Nome do Jogo:</label>
+                            <input type="text" id="gameName" placeholder="Ex: Xadrez Modular">
+                        </div>
+                        <div class="form-group">
+                            <label for="gameDescription">Descrição:</label>
+                            <textarea id="gameDescription" placeholder="Descreva como o jogo funciona"></textarea>
+                        </div>
+                        <button class="button button-save" id="confirmGame">Salvar Jogo</button>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="games-library">
+                <h2>Biblioteca de Jogos</h2>
+                <div class="games-grid" id="gamesGrid">
+                    <p>Seus jogos criados aparecerão aqui</p>
+                </div>
+            </section>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
